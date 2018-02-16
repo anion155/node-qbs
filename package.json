@@ -2,7 +2,7 @@
   "name": "node-qbs",
   "author": "Mikhaylov Anton <anion155@gmail.com>",
   "version": "0.0.1",
-  "description": "A Qbs-based build system for node.js native modules",
+  "description": "A Qbs-based build system for node.js native addons",
   "keywords": [
     "native",
     "addon",
