@@ -6,17 +6,41 @@ import qbs.Process
 
 Module {
     id: naModule
-    additionalProductTypes: ["nodeaddon"]
+    additionalProductTypes: ["node.addon"]
 
     property string _home: {
         return Environment.getEnv((qbs.hostOS == 'windows') ? 'USERPROFILE' : 'HOME')
     }
 
     property string devdir: FileInfo.joinPaths(naModule._home, ".node-gyp")
+    PropertyOptions {
+      name: "devdir"
+      description: "SDK download directory."
+    }
+
     property string node: "node"
+    PropertyOptions {
+      name: "node"
+      description: "Path to node executable."
+    }
+
     property string nodeVersion: nodeVersionProbe.found ? nodeVersionProbe.version : "0.0.0"
+    PropertyOptions {
+      name: "nodeVersion"
+      description: "Node version to build for."
+    }
+
     property bool nan: true
+    PropertyOptions {
+      name: "nan"
+      description: "Use Native Abstractions for Node.js module."
+    }
+
     // property bool napi: false
+    // PropertyOptions {
+    //   name: "nan"
+    //   description: "Use Native Abstractions for Node.js module."
+    // }
 
     Probe {
         id: nodeVersionProbe
@@ -70,7 +94,7 @@ Module {
     Rule {
         inputs: "dynamiclibrary"
         Artifact {
-            fileTags: ["nodeaddon"]
+            fileTags: ["node.addon"]
             filePath: FileInfo.joinPaths(input.baseDir, product.targetName + ".node")
         }
         prepare: {
