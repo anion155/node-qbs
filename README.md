@@ -35,6 +35,6 @@ Or `Node.AddonProduct`:
 
 ## Relevant File Tags
 
-| Tag         | Since | Description                         |
-| ----------- | ----- | ----------------------------------- |
+| Tag          | Since | Description                         |
+| ------------ | ----- | ----------------------------------- |
 | "node.addon" | 0.0.1 | This tag is attached to node addons |
