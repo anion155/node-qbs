@@ -21,10 +21,6 @@
     "url": "https://github.com/anion155/node-qbs/issues"
   },
   "homepage": "https://github.com/anion155/node-qbs#readme",
-  "main": "index.js",
-  "directories": {
-    "example": "example"
-  },
   "bin": {
     "nqbs": "lib/nqbs.js"
   },
