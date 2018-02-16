@@ -98,3 +98,8 @@ typings/
 
 
 # End of https://www.gitignore.io/api/c++,node
+
+# Not implemented
+example/
+docs/
+index.js
