@@ -32,7 +32,6 @@ Or `Node.AddonProduct`:
 | node        | string | 0.0.1 | "node"           | Path to node executable.             |
 | nodeVersion | string | 0.0.1 | `node --version` | Node version to build for.           |
 | nan         | bool   | 0.0.1 | true             | Use Native Abstractions for Node.js. |
-[//]: # (| napi        | bool   |       | true             | Use ABI Stable Node API (N-API).     |)
 
 ## Relevant File Tags
 
