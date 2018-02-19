@@ -6,7 +6,7 @@ Product {
 
     Group {
         condition: installAddon
-        fileTagsFilter: "nodeaddon"
+        fileTagsFilter: "node.addon"
         qbs.install: true
     }
 }
