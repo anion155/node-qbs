@@ -14,6 +14,6 @@
     "install": "nqbs rebuild"
   },
   "dependencies": {
-    "node-qbs": "0.0.2"
+    "node-qbs": "0.0.3"
   }
 }
