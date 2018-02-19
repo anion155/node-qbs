@@ -1,0 +1,19 @@
+{
+  "name": "HeloAddon",
+  "version": "1.0.0",
+  "description": "Node.js example native module",
+  "keywords": [
+    "addon",
+    "native",
+    "module"
+  ],
+  "author": "Node.js Foundation",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "install": "nqbs rebuild"
+  },
+  "dependencies": {
+    "node-qbs": "0.0.3"
+  }
+}

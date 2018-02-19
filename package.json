@@ -1,7 +1,7 @@
 {
   "name": "node-qbs",
   "author": "Mikhaylov Anton <anion155@gmail.com>",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Qbs-based build system for node.js native addons",
   "keywords": [
     "native",
@@ -21,8 +21,12 @@
     "url": "https://github.com/anion155/node-qbs/issues"
   },
   "homepage": "https://github.com/anion155/node-qbs#readme",
+  "main": "index.js",
   "bin": {
     "nqbs": "lib/nqbs.js"
+  },
+  "directories": {
+    "example": "example"
   },
   "dependencies": {
     "debug": "^3.1.0",
