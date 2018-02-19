@@ -179,3 +179,4 @@ CMakeLists.txt.user*
 
 ## Node Addon build directory
 addon-build/
+package-lock.json
