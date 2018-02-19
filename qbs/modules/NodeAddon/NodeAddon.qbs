@@ -109,7 +109,7 @@ Module {
 
     property bool installAddon: true
     Group {
-        condition: installAddon
+        condition: naModule.installAddon
         fileTagsFilter: "node.addon"
         qbs.install: true
     }
