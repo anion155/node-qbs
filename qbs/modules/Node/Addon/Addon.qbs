@@ -9,7 +9,7 @@ Module {
     additionalProductTypes: ["node.addon"]
 
     property bool installAddon: true
-        
+
     Depends { name: "Node"; submodules: ["Headers", "Nan"] }
 
     Rule {
