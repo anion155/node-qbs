@@ -1,7 +1,7 @@
 {
   "name": "node-qbs",
   "author": "Mikhaylov Anton <anion155@gmail.com>",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Qbs-based build system for node.js native addons",
   "keywords": [
     "native",
@@ -30,7 +30,6 @@
   },
   "dependencies": {
     "debug": "^3.1.0",
-    "nan": "^2.8.0",
     "node-gyp": "^3.6.2",
     "which": "^1.3.0",
     "yargs": "^11.0.0"

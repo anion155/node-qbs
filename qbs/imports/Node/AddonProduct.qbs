@@ -1,5 +1,5 @@
 import qbs
 
 Product {
-    Depends { name: "NodeAddon" }
+    Depends { name: "Node.Addon" }
 }
