@@ -25,9 +25,9 @@ Probe {
           "3.0.0": "iojs-3.0.0"
         };
 
-        var node = node || "node";
-        var npm = npm || "npm";
-        var devdir = devdir || FileInfo.joinPaths(__home, ".node-gyp");
+        node = node || "node";
+        npm = npm || "npm";
+        devdir = devdir || FileInfo.joinPaths(__home, ".node-gyp");
         if (!version || version == "env") {
           version = ProbeProcess.exec({
             bin: node,

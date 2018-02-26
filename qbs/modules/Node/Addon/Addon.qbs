@@ -11,6 +11,13 @@ Module {
     property bool installAddon: true
 
     Depends { name: "Node"; submodules: ["Headers", "Nan"] }
+    property string node
+    property string npm
+
+    Node.Headers.node: node
+    Node.Headers.npm: npm
+      Node.Nan.node: node
+      Node.Nan.npm: npm
 
     Rule {
         inputs: "dynamiclibrary"

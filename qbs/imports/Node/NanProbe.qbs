@@ -12,8 +12,8 @@ Probe {
     property pathList includePaths: []
 
     configure: {
-        var node = node || "node";
-        var npm = npm || "npm";
+        node = node || "node";
+        npm = npm || "npm";
 
         function nanPath() {
           return ProbeProcess.exec({
