@@ -14,7 +14,7 @@ Then add `node_modules/node-qbs/qbs/` to your [`qbsSearchPaths`](http://doc.qt.i
 Use `NodeAddon` module like so:
 
     Product {
-      Depends { name: 'NodeAddon' }
+      Depends { name: 'Node.Addon' }
     }
 
 Or `Node.AddonProduct`:
@@ -24,16 +24,48 @@ Or `Node.AddonProduct`:
     Node.AddonProduct {
     }
 
-## `NodeAddon` properties
+To require your addon use `require('node-qbs')('Addon')`.
 
-| Property    | Type   | Since | Default          | Description                          |
-| ----------- | ------ | ----- | ---------------- | ------------------------------------ |
-| devdir      | string | 0.0.1 | "~/.node-gyp"    | SDK download directory.              |
-| node        | string | 0.0.1 | "node"           | Path to node executable.             |
-| nodeVersion | string | 0.0.1 | `node --version` | Node version to build for.           |
-| nan         | bool   | 0.0.1 | true             | Use Native Abstractions for Node.js. |
+## `Node` module
+It is devided in to submodules:
+* `Headers` (for node and v8 headers),
+* `Nan` (for Native Abstractions for Node.js headers)
+* and `Addon` (for both).
 
-## Relevant File Tags
+Has Probes: `HeadersProbe` and `NanProbe`.
+
+And `AddonProduct`, which has all you need for node addon.
+
+## `Node.Headers` module
+
+Wraps `Node.HeadersProbe`, and has same properties.
+
+| Property | Type   | Since | Default          | Description                |
+| -------- | ------ | ----- | ---------------- | -------------------------- |
+| node     | string | 0.0.1 | "node"           | Path to node executable.   |
+| npm      | string | 0.0.4 | "npm"            | Path to npm executable.    |
+| devdir   | string | 0.0.1 | "~/.node-gyp"    | SDK download directory.    |
+| version  | string | 0.0.1 | `node --version` | Node version to build for. |
+
+## `Node.Nan` module
+
+Wraps `Node.NanProbe`, and has same properties.
+
+| Property | Type   | Since | Default          | Description                |
+| -------- | ------ | ----- | ---------------- | -------------------------- |
+| node     | string | 0.0.1 | "node"           | Path to node executable.   |
+| npm      | string | 0.0.4 | "npm"            | Path to npm executable.    |
+
+## `Node.Addon` module
+
+Depends on `Headers` and `Nan`. Wraps their properties.
+
+| Property     | Type | Since | Default | Description                          |
+| ------------ | ---- | ----- | ------- | ------------------------------------ |
+| installAddon | bool | 0.0.2 | true    | Install or not `node.addon` product. |
+| nan          | bool | 0.0.1 | true    | Use Nan module                       |
+
+Provide file tags:
 
 | Tag          | Since | Description                         |
 | ------------ | ----- | ----------------------------------- |
