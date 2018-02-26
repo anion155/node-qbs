@@ -10,14 +10,25 @@ Module {
 
     property bool installAddon: true
 
-    Depends { name: "Node"; submodules: ["Headers", "Nan"] }
     property string node
     property string npm
+    property path devdir
+    property string version
 
+    property bool nan: true
+
+    Depends { name: "Node.Headers" }
     Node.Headers.node: node
     Node.Headers.npm: npm
+    Node.Headers.devdir: devdir
+    Node.Headers.version: version
+
+    Depends { name: "Node.Nan"; condition: nan }
+    Properties {
+      condition: nan
       Node.Nan.node: node
       Node.Nan.npm: npm
+    }
 
     Rule {
         inputs: "dynamiclibrary"
