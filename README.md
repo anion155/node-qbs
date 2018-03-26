@@ -52,20 +52,21 @@ To require your addon use `require('node-qbs')('Addon')`.
 
 ### Options:
 
-|           Argument           |               Type               | Since |                Description                |
-| ---------------------------- | -------------------------------- | ----- | ----------------------------------------- |
-| --help                       | boolean                          | 0.0.1 | Show help                                 |
-| --qbs                        | string                           | 0.0.1 | Path to qbs executable.                   |
-| --npm                        | string                           | 0.0.1 | Path to npm executable.                   |
-| --debug, -d                  | boolean                          | 0.0.1 | Debug build variant.                      |
-| --jobs, -j <n>               | number                           | 0.0.1 | Use <n> concurrent build jobs.            |
-|                              |                                  |       | <n> must be an integer greater than zero. |
-|                              |                                  |       | The default is the number of cores.       |
-| --pwd, --directory, -C       | string                           | 0.0.1 | Run command in different directory.       |
-| --arch                       | string                           | 0.0.1 | Set target architecture.                  |
-| --node-version, --target, -t | string, default: process.version | 0.0.1 | Node version to build for.   []           |
-| --devdir                     | string                           | 0.0.1 | SDK download directory.                   |
-| --version                    | boolean                          | 0.0.1 | Show version number                       |
+|           Argument           |  Type   | Since |                Description                |
+| ---------------------------- | ------- | ----- | ----------------------------------------- |
+| --help                       | boolean | 0.0.1 | Show help                                 |
+| --qbs                        | string  | 0.0.1 | Path to qbs executable.                   |
+| --profile                    | string  | 0.0.6 | Qbs profile.                              |
+| --npm                        | string  | 0.0.1 | Path to npm executable.                   |
+| --debug, -d                  | boolean | 0.0.1 | Debug build variant.                      |
+| --jobs, -j <n>               | number  | 0.0.1 | Use <n> concurrent build jobs.            |
+|                              |         |       | <n> must be an integer greater than zero. |
+|                              |         |       | The default is the number of cores.       |
+| --pwd, --directory, -C       | string  | 0.0.1 | Run command in different directory.       |
+| --arch                       | string  | 0.0.1 | Set target architecture.                  |
+| --node-version, --target, -t | string  | 0.0.1 | Node version to build for.   []           |
+| --devdir                     | string  | 0.0.1 | SDK download directory.                   |
+| --version                    | boolean | 0.0.1 | Show version number                       |
 
 ## `Node` module
 
