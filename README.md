@@ -1,5 +1,6 @@
 Node Qbs
 ==========
+[![NPM](https://nodei.co/npm/node-qbs.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/node-qbs/)
 
 A Qbs-based build system for Node.js native modules
 
