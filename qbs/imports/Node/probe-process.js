@@ -1,3 +1,4 @@
+var require = require || loadExtension;
 var Process = require("qbs.Process");
 
 function exec(opts) {

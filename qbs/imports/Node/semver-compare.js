@@ -1,3 +1,4 @@
+var require = require || loadExtension;
 // Originaly taken from https://github.com/substack/semver-compare
 
 function cmp (a, b) {
