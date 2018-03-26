@@ -1,5 +1,5 @@
-var require = require || loadExtension;
-var Process = require("qbs.Process");
+var req = require !== undefined ? require : loadExtension;
+var Process = req("qbs.Process");
 
 function exec(opts) {
     var p = new Process();
