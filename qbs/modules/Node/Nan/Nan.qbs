@@ -17,7 +17,7 @@ Module {
         node: nanModule.node
         npm: nanModule.npm
     }
-    cpp.includePaths: nanProbe.includePaths
+    cpp.systemIncludePaths: nanProbe.includePaths
 
     validate: {
       if (!nanProbe.found) {
