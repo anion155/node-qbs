@@ -24,7 +24,7 @@ Module {
         version: headersModule.version
     }
     cpp.cxxLanguageVersion: SemVer.cmp(headersProbe.version, "3.0.0") >= 0 ? "c++11" : original
-    cpp.includePaths: headersProbe.includePaths
+    cpp.systemIncludePaths: headersProbe.includePaths
 
     validate: {
         if (!headersProbe.found) {
