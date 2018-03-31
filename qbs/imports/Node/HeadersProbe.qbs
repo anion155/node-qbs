@@ -33,10 +33,9 @@ Probe {
             bin: node,
             args: ["--version"],
             err_msg: "Node executable not found"
-          }).readStdOut();
+          }).readStdOut().trim();
         }
-        version = version.replace(/v?([0-9.]+)\n/, '$1');
-
+        version = version.match(/^v?([0-9.]+)$/)[1];
         var ver_folder_name = version_folder_names[version];
         if (!ver_folder_name) { ver_folder_name = version; }
 
@@ -46,7 +45,7 @@ Probe {
               pwd: sourceDirectory,
               args: ["bin"],
               err_msg: "Npm executable not found"
-            }).readStdOut();
+            }).readStdOut().trim();
             ProbeProcess.exec({
               bin: FileInfo.joinPaths(npm_bin, "nqbs"),
               args: ["install", version],

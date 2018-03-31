@@ -38,6 +38,8 @@ Module {
         }
         prepare: {
             var cmd = new JavaScriptCommand();
+            cmd.description = 'Copying node.addon';
+            cmd.highlight = 'linker';
             cmd.sourceCode = function() {
                 File.copy(input.filePath, output.filePath)
             };
