@@ -1,36 +1,36 @@
-var fs = require('fs')
-var path = require('path')
-var debug = require('debug')('node-qbs')
+var fs = require('fs');
+var path = require('path');
+var Logger = require('debug-logger')('nqbs');
 
 function requireNativeModule(name, forceConf) {
   // Search relative to the file that included this one
-  var base = path.dirname(module.parent.filename)
+  const base = path.dirname(module.parent.filename);
 
   // Suffixes to search for (in each mode)
   // Both are used, debug just changes which is tried first
-  name = name.replace(/\.node$/, '')
-  var search = {
+  name = name.replace(/\.node$/, '');
+  let search = {
     release: path.join('addon-build', 'release', 'install-root', name + '.node'),
     debug: path.join('addon-build', 'debug', 'install-root', name + '.node'),
-    default: path.join('addon-build', 'default', 'install-root', name + '.node')
-  }
+    default: path.join('addon-build', 'default', 'install-root', name + '.node'),
+  };
   if (typeof forceConf !== 'undefined') {
-    search = { }
-    search[forceConf] = path.join('addon-build', forceConf, 'install-root', name + '.node')
+    search = { };
+    search[forceConf] = path.join('addon-build', forceConf, 'install-root', name + '.node');
   }
 
-  var root = base
-  var location
-  var same = 0
-  var found = false
+  let root = base;
+  let location;
+  let same = 0;
+  let found = false;
 
   // Walk upward to the root
   while (same < 2 || found) {
-    debug('Search module for configuration:', conf)
+    Logger.log('Search module for configuration:', conf);
     for (var conf in search) {
       try {
         location = path.join(root, search[conf])
-        debug('  at', location)
+        Logger.log('  at', location)
         found = fs.statSync(location)
       } catch (e) { }
       if (found) break
@@ -44,4 +44,4 @@ function requireNativeModule(name, forceConf) {
   return require(location)
 }
 
-module.exports = requireNativeModule
+module.exports = requireNativeModule;
