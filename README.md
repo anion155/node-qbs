@@ -44,7 +44,7 @@ Usage: `nqbs <command> [options] -- [qbs-args]`
 | Command                | Since | Description                                                                 |
 | ---------------------- | ----- | --------------------------------------------------------------------------- |
 | help                   | 0.0.1 | Show general or command-specific help.                                      |
-| init                   | 0.0.9 | Initialize project for node-qbs.                                            |
+| init                   | 0.1.0 | Initialize project for node-qbs.                                            |
 | qbs                    | 0.0.1 | Translate to qbs.                                                           |
 | build                  | 0.0.1 | Build native addon.                                                         |
 | clean                  | 0.0.1 | Remove the files generated during a build.                                  |
