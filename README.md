@@ -10,7 +10,7 @@ To use this package, add the module `node-qbs` to your package.json as a develop
 
     npm install --save-dev node-qbs
 
-Then add `node_modules/node-qbs/qbs/` to your [`qbsSearchPaths`](http://doc.qt.io/qbs/custom-modules.html) project/product property.
+Then do `./node_modules/.bin/nqbs init` in your package directory.
 
 Use `NodeAddon` module like so:
 
@@ -37,22 +37,26 @@ To require your addon use `require('node-qbs')('Addon')`.
 
 ## CLI command `nqbs`
 
+Usage: `nqbs <command> [options] -- [qbs-args]`
+
 ### Commands:
 
-|        Command         | Since |                                           Description                                           |
-| ---------------------- | ----- | ----------------------------------------------------------------------------------------------- |
-| help                   | 0.0.1 | Show general or command-specific help.                                                          |
-| qbs [--] [qbs-args..]  | 0.0.1 | Translate to qbs.                                                                               |
-| build                  | 0.0.1 | Build native addon.                                                                             |
-| clean                  | 0.0.1 | Remove the files generated during a build.                                                      |
-| rebuild                | 0.0.1 | Runs clean and build in a row.                                                                  |
-| install [node-version] | 0.0.4 | Translate to node-gyp with `--ensure` option. Installs node header files for the given version. |
-| list                   | 0.0.4 | Translate to node-gyp. Lists the currently installed node header versions.                      |
-| remove <node-version>  | 0.0.4 | Translate to node-gyp. Removes the node header files for the given version.                     |
+| Command                | Since | Description                                                                 |
+| ---------------------- | ----- | --------------------------------------------------------------------------- |
+| help                   | 0.0.1 | Show general or command-specific help.                                      |
+| init                   | 0.0.9 | Initialize project for node-qbs.                                            |
+| qbs                    | 0.0.1 | Translate to qbs.                                                           |
+| build                  | 0.0.1 | Build native addon.                                                         |
+| clean                  | 0.0.1 | Remove the files generated during a build.                                  |
+| rebuild                | 0.0.1 | Runs clean and build in a row.                                              |
+| install [node-version] | 0.0.4 | Translate to node-gyp with `--ensure` option.                               |
+|                        |       | Installs node header files for the given version.                           |
+| list                   | 0.0.4 | Translate to node-gyp. Lists the currently installed node header versions.  |
+| remove <node-version>  | 0.0.4 | Translate to node-gyp. Removes the node header files for the given version. |
 
 ### Options:
 
-|           Argument           |  Type   | Since |                Description                |
+| Option                     | Type    | Since | Description                               |
 | ---------------------------- | ------- | ----- | ----------------------------------------- |
 | --help                       | boolean | 0.0.1 | Show help                                 |
 | --qbs                        | string  | 0.0.1 | Path to qbs executable.                   |
@@ -83,7 +87,7 @@ And `AddonProduct`, which has all you need for node addon.
 
 Wraps `Node.HeadersProbe`, and has same properties.
 
-| Property |  Type  | Since |     Default      |        Description         |
+| Property | Type   | Since | Default          | Description                |
 | -------- | ------ | ----- | ---------------- | -------------------------- |
 | node     | string | 0.0.1 | "node"           | Path to node executable.   |
 | npm      | string | 0.0.4 | "npm"            | Path to npm executable.    |
@@ -94,7 +98,7 @@ Wraps `Node.HeadersProbe`, and has same properties.
 
 Wraps `Node.NanProbe`, and has same properties.
 
-| Property |  Type  | Since | Default |       Description        |
+| Property | Type   | Since | Default | Description              |
 | -------- | ------ | ----- | ------- | ------------------------ |
 | node     | string | 0.0.1 | "node"  | Path to node executable. |
 | npm      | string | 0.0.4 | "npm"   | Path to npm executable.  |
@@ -103,13 +107,13 @@ Wraps `Node.NanProbe`, and has same properties.
 
 Depends on `Headers` and `Nan`. Wraps their properties.
 
-|   Property   | Type | Since | Default |             Description              |
+| Property     | Type | Since | Default | Description                          |
 | ------------ | ---- | ----- | ------- | ------------------------------------ |
 | installAddon | bool | 0.0.2 | true    | Install or not `node.addon` product. |
 | nan          | bool | 0.0.1 | true    | Use Nan module                       |
 
 Provide file tags:
 
-|     Tag      | Since |             Description             |
+| Tag          | Since | Description                         |
 | ------------ | ----- | ----------------------------------- |
 | "node.addon" | 0.0.1 | This tag is attached to node addons |
